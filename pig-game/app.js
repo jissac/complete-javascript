@@ -31,6 +31,7 @@ document.querySelector('#score-1').textContent = '0';
 //hide dice initially
 document.querySelector('.dice').style.display = 'none';
 
+//roll button actions
 document.querySelector('.btn-roll').addEventListener('click', function(){
 
     //1. Generate random number
@@ -56,4 +57,10 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         //hide dice for beginning of next player's turn
         document.querySelector('.dice').style.display = 'none';
     };
+});
+
+//hold button actions
+document.querySelector('.btn-hold').addEventListener('click',function(){
+    //add current score to global score
+    scores[activePlayer] += currentScore;
 });
