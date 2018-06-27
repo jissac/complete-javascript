@@ -48,14 +48,7 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         currentScore += dice;
         document.querySelector('#current-'+ activePlayer).textContent = currentScore;
     } else{
-        activePlayer === 0 ? document.querySelector('#current-0').textContent = '0':document.querySelector('#current-1').textContent = '0'
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
-        activePlayer === 0 ? activePlayer=1:activePlayer=0;
-        currentScore = 0;
-        
-        //hide dice for beginning of next player's turn
-        document.querySelector('.dice').style.display = 'none';
+        nextPlayer();
     };
 });
 
@@ -63,4 +56,18 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 document.querySelector('.btn-hold').addEventListener('click',function(){
     //add current score to global score
     scores[activePlayer] += currentScore;
+    document.querySelector('#')
+    nextPlayer();
 });
+
+// next player function
+function nextPlayer(){
+    activePlayer === 0 ? document.querySelector('#current-0').textContent = '0':document.querySelector('#current-1').textContent = '0'
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+    activePlayer === 0 ? activePlayer=1:activePlayer=0;
+    currentScore = 0;
+        
+    //hide dice for beginning of next player's turn
+    document.querySelector('.dice').style.display = 'none';
+};
